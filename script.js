@@ -66,6 +66,7 @@ function draw_snake() {
     context.fillStyle = "#9CFF2E";
     snake.x += velocity.x *snake_speed;
     snake.y += velocity.y *snake_speed;
+    context.beginPath()
     context.fillRect(snake.x, snake.y, block_size-1, block_size-1);
     
     for (let i = 0; i < snakeBody.length; i++) {
@@ -76,6 +77,7 @@ function draw_snake() {
             block_size-1
         );
     }
+    context.endPath()
 }
 
 function place_food() {
